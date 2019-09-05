@@ -1,28 +1,28 @@
-var gulp = require("gulp"),
-watch = require("gulp-watch");
+const gulp = require('gulp'),
+watch = require('gulp-watch');
 
-gulp.task("default", function(munn){
-	console.log("first gulp task");
-	munn();
+gulp.task('style',function(done){
+	console.log('A css is running.. ha ha ha...');
+	done();
 });
 
-gulp.task('html', function(munn){
-	console.log("an html task");
+gulp.task("test", function(munn){
+	console.log('an html task');
 	munn(); 
 });
 
-gulp.task('func', function(error){
-			if(error){
-				console.log("A BIG ERROR!!!");
-			}
-			else{
-				console.log("CONGRATULATIONS!!");
-			}
-		});
-		
-gulp.task('watch', function(munn){
+gulp.task('watch', function(done){
+	
 	watch('./app/index.html', function(){
-		gulp.series('html','func')();
+		gulp.series('test') (function(cb){	//not
+			if(cb){							//related
+				console.log('error');			//to 
+			}									//the
+			else{								//project
+				console.log('congratulations!');//what-
+			}									//so-
+		})										//ever
 	});
-	munn();
+	watch('./app/assets/**/*.css', gulp.series('style'));
+	done();
 });
