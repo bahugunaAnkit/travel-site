@@ -1,4 +1,7 @@
+$darkGray: #333;
+
 body{
 	font-family: 'Roboto', sans-serif;
-	color: #333; /*dark grey*/
+	color: $darkGray; /*dark grey*/
+	columns: 300px 2;
 }
