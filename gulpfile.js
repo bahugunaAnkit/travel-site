@@ -14,37 +14,23 @@ gulp.task('style',function(done){
 	done();
 });
 
-gulp.task("test", function(munn){
-	browserSync.reload();
-	console.log('an html task');
-	munn(); 
-});
-
 gulp.task('watch', function(done){
 	browserSync.init({
+		notify: false,
 		server: {
 			baseDir: "app"
 		}
 	});
 	watch('./app/index.html', function(){
-		gulp.series('test') (function(cb){	//not
-			if(cb){							//related
-				console.log('error');			//to 
-			}									//the
-			else{								//project
-				console.log('congratulations!');//what-
-			}									//so-
-		})										//ever
+		browserSync.reload();										//ever
 	});
-	watch('./app/assets/**/*.css', function(){
-		gulp.series('style') (function(cb){	//not
-			if(cb){							//related
-				console.log('error');			//to 
-			}									//the
-			else{								//project
-				console.log('congratulations!');//what-
-			}									//so-
-		})										//ever
-	});
+	watch('./app/assets/**/*.css', gulp.series('cssInject'));
 	done();
 });
+
+function cssInject(){
+	gulp.src('./app/temp/styles/style.css')
+	.pipe(browserSync.stream());
+}
+
+gulp.task('cssInject', gulp.series('style', cssInject));
