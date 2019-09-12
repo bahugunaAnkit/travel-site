@@ -11,22 +11,32 @@ meant to be imported and not for use directly*/
 	left: 0;
 	width:100%;
 	text-align: center;
-	
 	}
+	
 	&__title {
 	font-weight: 400;
 	color: $mainBlue;
 	margin: 0;
 	font-size: 1.1rem;
-	
-	
+	@mixin atSmall{
+		font-size: 2rem;
+	}
+	@mixin atMedium{
+		font-size: 3.2rem;
+	}
+	@mixin atLarge{
+		font-size: 4.8rem;
+	}
 	
 	}
 	&__subtitle {
 	font-weight: 300;
 	color: $mainBlue;
-	font-size: 2.9rem;
+	font-size: 1rem;
 	margin: 0;
+	@mixin atSmall{
+		font-size: 2rem;
+	}
 	}
 	&__description{
 	color: #fff;
