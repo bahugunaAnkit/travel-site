@@ -1,0 +1,48 @@
+.headline{
+	font-weight: 300;
+	font-size: 1.9rem;
+	@mixin atSmall{
+		font-size: 2.875rem;
+	}
+	color: $mainBlue;
+	
+	&__centered{
+		text-align: center;
+	}
+	
+	&__orange{
+		color: $mainOrange;
+	}
+	
+	&__small{
+		font-size: 1.3rem;
+		@mixin atSmall{
+			font-size: 1.875rem;
+		}
+	}
+	
+	&__narrow{
+		max-width: 300px;
+		@mixin atSmall{
+			max-width: 500px;
+		}
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	&__light{
+		font-weight: 100;
+	}
+	
+	strong{
+		font-weight: 500;
+	}
+	
+	&__margin-b-small{
+		margin-bottom: 0.5em;
+	}
+	
+	&__margin-b-large{
+		margin-bottom: 1.6em;
+	}
+}

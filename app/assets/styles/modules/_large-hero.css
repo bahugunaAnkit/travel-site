@@ -2,7 +2,7 @@
 meant to be imported and not for use directly*/
 
 .large-hero {
-	border-bottom: 10px solid $mainBlue;
+	border-bottom: 8px solid $mainBlue;
 	position: relative;
 	
 	&__image{
