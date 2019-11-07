@@ -341,14 +341,18 @@ template {
   display: none;
 }
 
-body{
+body {
 	font-family: 'Roboto', sans-serif;
 	color: #333; /*dark grey*/
 }
 
-img{
+img {
 	max-width: 100%;
 	height: auto;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 /*underscore before a file's name means it's a partial file i.e. it's  
@@ -373,18 +377,16 @@ meant to be imported and not for use directly*/
 	}
 
 .large-hero__title {
-	font-weight: 400;
+	font-weight: 300;
 	color: #2f5572;
 	margin: 0;
 	font-size: 2.4rem;
-	
 	}
 
 @media (min-width: 530px){
 
 .large-hero__title {
 		font-size: 4.8rem
-	
 	}
 	}
 
@@ -398,7 +400,7 @@ meant to be imported and not for use directly*/
 @media (min-width: 530px){
 
 .large-hero__subtitle {
-		font-size: 2.9rem
+			font-size: 2.9rem
 	}
 	}
 
@@ -415,7 +417,7 @@ meant to be imported and not for use directly*/
 @media (min-width: 530px){
 
 .large-hero__description{
-		font-size: 1.875rem
+			font-size: 1.875rem
 	}
 	}
 
@@ -451,10 +453,22 @@ meant to be imported and not for use directly*/
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	overflow: hidden;
 }
 
 .wrapper__medium{
 		max-width: 976px;
+	}
+
+.wrapper__b-margin{
+		margin-bottom: 1rem;
+	}
+
+@media (min-width: 530px){
+
+.wrapper__b-margin{
+			margin-bottom: 2.9rem
+	}
 	}
 
 .wrapper .wrapper{
@@ -480,7 +494,7 @@ meant to be imported and not for use directly*/
 
 .headline{
 	font-weight: 300;
-	font-size: 1.9rem;
+	font-size: 1.9rem;;
 	color: #2f5572;
 }
 
@@ -500,18 +514,18 @@ meant to be imported and not for use directly*/
 	}
 
 .headline__small{
-		font-size: 1.3rem;
+		font-size: 1.3rem;;
 	}
 
 @media (min-width: 530px){
 
 .headline__small{
-			font-size: 1.875rem
+			font-size: 1.875rem;
 	}
 	}
 
 .headline__narrow{
-		max-width: 300px;
+		max-width: 300px;;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -539,8 +553,33 @@ meant to be imported and not for use directly*/
 		margin-bottom: 1.6em;
 	}
 
+.row__gutter{
+		margin-right: -65px;
+	}
 
+.row__gutter > div{
+		padding-right: 65px;
+	}
+
+.row:after {
+		content:"";
+		clear:both;
+		display: block;
+	}
+
+@media (min-width: 800px){
+		.row__medium-4{
+			float: left;
+			width: 33.33%;
+		}
+		
+		.row__medium-8{
+			float: left;
+			width: 66.66%;
+		}
+	}
 
 /*Now we could directly use the class .largehero but we'll use import*/
+
 /*in styles folder we'll create a "modules" foldrr*/
 
