@@ -13,11 +13,19 @@
 		&__medium-4{
 			float: left;
 			width: 33.33%;
+			
+			&_larger{
+				width: 37%;
+			}
 		}
 		
 		&__medium-8{
 			float: left;
 			width: 66.66%;
+			
+			&_smaller{
+				width: 63%;
+			}
 		}
 	}
 }
