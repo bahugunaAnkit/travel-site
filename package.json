@@ -4,7 +4,7 @@
   "dependencies": {
     "anymatch": "^3.0.2",
     "braces": "^3.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "micromatch": "^4.0.2",
     "normalize.css": "^8.0.0"
   },
